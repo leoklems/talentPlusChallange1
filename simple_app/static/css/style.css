@@ -1,0 +1,127 @@
+:root {
+    --primary: #faffa3;
+    /* --secondary: #ffba88; */
+    --secondary: #dafba3;
+    --tertiary: #4a89ac;
+    /* --tertiary: #ffba88; */
+    --background: #fff;
+    --dates: #424643;
+    --text-color: #f688ff;
+    --white: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 10px;
+    line-height: 1.2em;
+    background-color: black;
+    color: white;
+    font-family: 'base', 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    padding: 0px;
+    margin: 0;
+}
+
+main#main {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 1fr;
+}
+
+main#main>header {
+    padding: 0 25px;
+    margin-top: 30px;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#h-le {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 1fr;
+    font-size: 3em;
+    color: var(--tertiary);
+    font-family: -webkit-body;
+}
+
+#h-menu .mob-v button {
+    border-width: 1px;
+    border-color: var(--secondary);
+    color: var(--secondary);
+    background-color: unset;
+    padding: 2px;
+}
+
+.desk-v {
+    display: none;
+}
+
+main#main>section {
+    padding: 0 25px;
+    margin-top: 30px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    font-size: 2em;
+    line-height: 1em;
+    text-align: center;
+}
+
+main#main>footer {
+    padding: 0 25px;
+    margin-top: 30px;
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.m-data {
+    font-size: 2em;
+    color: var(--text-color);
+}
+
+@media only screen and (min-width: 768px) {
+    html,
+    body {
+        font-size: 15px;
+        line-height: 1.2em;
+    }
+    main#main>header {
+        padding: 0 120px;
+        margin-top: 30px;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 5fr;
+    }
+    .desk-v {
+        display: block;
+    }
+    .mob-v {
+        display: none;
+    }
+}
