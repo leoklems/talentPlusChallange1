@@ -1,0 +1,6 @@
+app:
+  name: frontend-app
+  group: frontend
+  container:
+    image: simple_app-front:latest
+    port: 8000

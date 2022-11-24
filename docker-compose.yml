@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+  app_back:
+    build:
+      context: .
+#    ports:
+#      - "8001: 8000"
+    volumes:
+#      - type: volume
+#        source: ./
+#        target: /app/
+#      - type: volume
+#        source: ./simple_app
+#        target: /app/simple_app
+      - ".: /app/"
+      - ".simple_app/: /app/simple_app/"
+      - /app/simple_app/static
+      - /app/simple_app/templates
+
+    command: >
+      sh -c "python manage.py makemigrations &&
+              python manage.py migrate &&
+              python manage.py runserver 0.0.0.0:8000"
+    image: app_backend
+    expose:
+      - 8000
+    depends_on:
+      - app_front
+    restart: "on-failure"
+
+  app_front:
+    build:
+      context: .
+#    ports:
+#      - "8002: 8000"
+    volumes:
+#      - type: volume
+#        source: ./simple_app/static
+#        target: /app/simple_app/static
+#      - type: volume
+#        source: ./templates
+#        target: /app/simple_app/templates
+#      - type: volume
+      - ".simple_app/static: /app/simple_app/static"
+      - ".simple_app/templates: /app/simple_app/templates"
+
+    image: app_frontend
+    expose:
+      - 8000
+    depends_on:
+      - app_back
+    restart: "on-failure"
+
+#volumes:
+#      .:
+#      .simple_app:
+#      .simple_app/static:
+#      .simple_app/templates:

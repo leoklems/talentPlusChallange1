@@ -1,0 +1,12 @@
+ingress:
+  hosts:
+    - host: talentPlus_app.k8s.com
+      paths: 
+        - path: /back/
+          backend:
+            serviceName: backend-app
+            servicePort: 8080
+        - path: /
+          backend:
+            serviceName: frontend-app
+            servicePort: 80
