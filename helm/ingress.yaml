@@ -1,6 +1,6 @@
 ingress:
   hosts:
-    - host: talentPlus_app.k8s.com
+    - host: talentPlus_app.com
       paths: 
         - path: /back/
           backend:
