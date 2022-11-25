@@ -2,5 +2,5 @@ app:
   name: frontend-app
   group: frontend
   container:
-    image: simple_app-front:latest
+    image: app_frontend:latest
     port: 8000

@@ -14,7 +14,7 @@ services:
       sh -c "python manage.py makemigrations &&
               python manage.py migrate &&
               python manage.py runserver 0.0.0.0:8000"
-    image: app_backend
+    image: app_backend:latest
     expose:
       - 8000
     depends_on:
@@ -28,7 +28,7 @@ services:
       - ".simple_app/static: /app/simple_app/static"
       - ".simple_app/templates: /app/simple_app/templates"
 
-    image: app_frontend
+    image: app_frontend:latest
     expose:
       - 8000
     depends_on:

@@ -2,7 +2,7 @@ app:
   name: backend-app
   group: backend
   container:
-    image: simple_app-back:latest
+    image: app_backend:latest
     env:
       - key: DB_SERVER
         value: sqlite3
